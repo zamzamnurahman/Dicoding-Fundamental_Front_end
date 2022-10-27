@@ -1,6 +1,6 @@
-import clubs from "./clubs";
+import clubs from "./clubs.js";
 
-class DataSource {
+class DataSource extends HTMLElement {
   static searchClub(keyword) {
     return new Promise((resolve, reject) => {
       const filteredClubs = clubs.filter((club) =>
