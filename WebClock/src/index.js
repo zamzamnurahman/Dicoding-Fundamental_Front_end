@@ -4,7 +4,7 @@ import moment from "moment";
 
 const displayTime = () => {
   moment.locale("id");
-  $(".time").text(moment().format("H:m:s"));
+  $(".time").text(moment().format("LTS"));
   $(".date").text(moment().format("LL"));
 };
 
