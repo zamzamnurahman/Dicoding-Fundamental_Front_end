@@ -94,7 +94,7 @@ a,a:hover{
 <div class="card-berita" style="background: url('${this.urlImg ?? "https://th.bing.com/th/id/OIP.2cxR1aDg_FkohtgrQBnldwHaEK?pid=ImgDet&rs=1"}') no-repeat; background-size : cover; ">
 <div class="bg">
 <div class="title">
-<h4>${this.desc ?? "Judul ini ini judul beritanya guys ya safsajhf ashfhsakfhaslkf kasfk sakflkashf sakf"}</h4>
+<h4>${this.title ?? "Judul ini ini judul beritanya guys ya safsajhf ashfhsakfhaslkf kasfk sakflkashf sakf"}</h4>
 </div>
   <div class="author">
     <p>Penulis : <strong>${this.author ?? "Author"}</strong></p>

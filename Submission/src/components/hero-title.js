@@ -1,5 +1,3 @@
-
-
 class HeroTitle extends HTMLElement {
   constructor() {
     super();

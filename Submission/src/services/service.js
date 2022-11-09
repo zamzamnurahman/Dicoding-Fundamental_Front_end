@@ -11,10 +11,6 @@ const api = {
   trending: function () {
     return _axios.get('top-headlines?country=id')
   }
-  //   airing: _axios.get('anime?filter[status]=current&sort=-userCount'),
-  //   upcoming: _axios.get('anime?filter[status]=upcoming&sort=-userCount'),
-  //   best: _axios.get('anime?sort=-averageRating'),
-  //   popular: _axios.get('anime?sort=-userCount')
 }
 
 export default api
