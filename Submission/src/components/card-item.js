@@ -7,30 +7,42 @@ class CardItem extends HTMLElement {
     this.create = create;
     this.urlImg = urlImg;
     this.url = url;
+    this.ShadowDom = this.attachShadow({ mode: "open" });
   }
 
   connectedCallback() {
     this.render();
   }
 
+  getDate(d) {
+    var date = new Date(d);
+    date = date.toDateString();
+    return date;
+  }
 
   render() {
-    this.innerHTML = `
+    this.ShadowDom.innerHTML = `
 <style>
 .card-berita{
-  background : url("${this.urlImg}");
-  background-size : cover;
-  width: 350px;
-  height: 300px;
+
+  margin: 10px;
   background-size: cover;
   border-radius: 10px;
   box-shadow: 2px 2px 3px grey;
   transition: 0.5s;
+  overflow : hidden;
+
 }
 
 .card-berita:hover {
   scale: 1.1;
   cursor: pointer;
+
+}
+
+.img img{
+  height : 100%;
+
 }
 
 .bg {
@@ -38,10 +50,8 @@ class CardItem extends HTMLElement {
   justify-content: end;
   flex-direction: column;
   border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.210);
+  padding: 40% 10px 10px 10px;
+  background-color: rgba(0, 0, 0, 0.410);
   color: white;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -51,18 +61,28 @@ class CardItem extends HTMLElement {
 
 h4,
 p {
+  
   margin: 0;
 }
-
-.title h4 {
-
-  line-height: 22px;
+a,a:hover{
+  text-decoration : none;
 }
 
+.title{
+  font-size : 24px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 .description {
   font-size: 14px;
   line-height: 17px;
   margin: 5px 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .createdAt {
@@ -70,20 +90,20 @@ p {
 }
 </style>
 
-<a href="${this.url}">
-<div class="card-berita">
+<a href="${this.url ?? "/"}">
+<div class="card-berita" style="background: url('${this.urlImg ?? "https://th.bing.com/th/id/OIP.2cxR1aDg_FkohtgrQBnldwHaEK?pid=ImgDet&rs=1"}') no-repeat; background-size : cover; ">
 <div class="bg">
-  <div class="title">
-    <h4>${this.title}</h4>
-  </div>
+<div class="title">
+<h4>${this.desc ?? "Judul ini ini judul beritanya guys ya safsajhf ashfhsakfhaslkf kasfk sakflkashf sakf"}</h4>
+</div>
   <div class="author">
-    <p>Penulis : <strong>${this.author}</strong></p>
+    <p>Penulis : <strong>${this.author ?? "Author"}</strong></p>
   </div>
   <div class="description">
-    <p>${this.desc}</p>
+    <p>${this.desc ?? "Cari berita trending di seluruh Dunia dengan mencari kata kunci tentang berita yang ingin dicari dfsdsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa kdsfnkdsf kdslflksjd fsdfjlksdjflkjslkdfjlksd fkjdsfjdslk "}</p>
   </div>
   <div class="createdAt">
-    <p>${this.create}</p>
+    <p>${this.getDate(this.create)}</p>
   </div>
 </div>
 </a>

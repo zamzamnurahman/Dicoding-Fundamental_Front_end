@@ -8,7 +8,9 @@ const api = {
   search: function (q) {
     return _axios.get(`everything?q=${q}`)
   },
-  //   trending: _axios.get('trending/anime'),
+  trending: function () {
+    return _axios.get('top-headlines?country=id')
+  }
   //   airing: _axios.get('anime?filter[status]=current&sort=-userCount'),
   //   upcoming: _axios.get('anime?filter[status]=upcoming&sort=-userCount'),
   //   best: _axios.get('anime?sort=-averageRating'),
