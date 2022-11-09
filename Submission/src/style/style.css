@@ -4,73 +4,53 @@
   font-family: 'Fredoka', sans-serif;
 }
 
-li {
-  margin: 0 30px;
-  list-style: none;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.hero {
-  /* background-color: red; */
-  align-items: center;
-  height: 80vh;
-
-}
-
-.title {
-  font-size: 56px;
-  font-weight: 400;
-  /* font-weight: bold; */
-}
-
-.title span {
-  font-weight: 600;
-}
-
-
-
-.menu-image {
-  border-radius: 15px;
-  height: 350px;
+.card-berita {
   width: 350px;
-  background-image: url("/src/assets/nasi-goreng.png");
+  height: 300px;
+  background: url('../assets/nasi-goreng.png');
   background-size: cover;
-  color: white;
-  display: flex;
-  padding: 10px;
-  box-shadow: 5px 2px 20px rgba(0, 0, 0, 0.214);
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px grey;
+  transition: 0.5s;
 }
 
-.subtitle {
-  line-height: 18px;
-}
-
-.menu-desc {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: flex-start;
-}
-
-.level {
-  display: flex;
-}
-
-.btn-resep {
-  border: none;
-  border-radius: 15px;
-  background-color: #FD4007;
-  padding: 10px 25px;
-  color: white;
-  font-weight: bold;
+.card-berita:hover {
+  scale: 1.1;
   cursor: pointer;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
+}
+
+.bg {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.210);
+  color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+h4,
+p {
+  margin: 0;
+}
+
+.title h4 {
+
+  line-height: 22px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 17px;
+  margin: 5px 0;
+}
+
+.createdAt {
+  font-size: 10px;
 }
